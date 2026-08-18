@@ -412,7 +412,7 @@ const organigrama = {
 
     sec({
       body: `<figure class="split__media reveal" style="max-width:1000px;margin-inline:auto">
-        <a class="gal__item" style="aspect-ratio:auto;border-radius:var(--r-lg);cursor:zoom-in" href="assets/img/organigrama-26.png" data-full="assets/img/organigrama-26.png" data-caption="Organigrama del Colegio Quercus, curso 2026/27">
+        <a class="gal__item" style="border-radius:var(--r-lg)" href="assets/img/organigrama-26.png" data-full="assets/img/organigrama-26.png" data-caption="Organigrama del Colegio Quercus, curso 2026/27">
           ${img('organigrama-26.png', 'Organigrama del Colegio Quercus')}
         </a>
         <figcaption class="small muted center mt-1">Pulsa sobre la imagen para ampliarla. Organigrama vigente en el curso 2026/2027.</figcaption>
