@@ -37,6 +37,7 @@ const I = {
   briefcase: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16"/></svg>',
   medal: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="6"/><path d="M8.2 10L5 2h5l2.5 5.5M15.8 10L19 2h-5"/></svg>',
   camera: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8a2 2 0 012-2h2l1.5-2h7L17 6h2a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><circle cx="12" cy="13" r="3.5"/></svg>',
+  zoom: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5M11 8v6M8 11h6"/></svg>',
   megaphone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11v2a2 2 0 002 2h1l9 5V4L6 9H5a2 2 0 00-2 2z"/><path d="M18.5 8.5a5 5 0 010 7"/></svg>',
   fb: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.52 1.5-3.9 3.77-3.9 1.1 0 2.24.19 2.24.19v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.89h2.78l-.45 2.9h-2.33V22C18.34 21.2 22 17.06 22 12.06z"/></svg>',
   ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg>',
@@ -167,9 +168,11 @@ function docs(items) {
 }
 
 function gallery(items) {
-  return `<div class="gal">${items.map(g => `<a class="${cls('gal__item', g.size && 'gal__item--' + g.size)}" href="${IMG(g.image)}" data-full="${IMG(g.image)}" data-caption="${esc(g.title + (g.text ? ' — ' + g.text : ''))}">
+  return `<div class="gal">${items.map(g => `<a class="gal__item" href="${IMG(g.image)}" data-full="${IMG(g.image)}" data-caption="${esc(g.title + (g.text ? ' — ' + g.text : ''))}">
       ${img(g.image, g.title)}
-      <span class="gal__cap">${esc(g.title)}${g.text ? `<small>${esc(g.text)}</small>` : ''}</span>
+      <span class="gal__cap">${esc(g.title)}${g.text ? `<small>${esc(g.text)}</small>` : ''}
+        <span class="gal__zoom">${I.zoom}Ampliar</span>
+      </span>
     </a>`).join('')}</div>`;
 }
 
